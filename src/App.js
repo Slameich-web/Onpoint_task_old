@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Carousel from './carousel/carousel'
+import Dots from './carousel/firstDot'
+import FirstPage from "./components/FirstPage";
+import SecondPage from "./components/SecondPage";
+import ThirdPage from "./components/ThirdPage"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor () {
+    super()
+    this.state = {
+      axis: 'y'
+    }
+    this.setAxis = axis => {
+      return () => this.setState({'axis': axis})
+    }
+  }
+  render () {
+    return (
+      <div style={{height: '768px'}}>
+        <Carousel axis={this.state.axis} widgets={[Dots]} className="custom-class">
+          <FirstPage/>
+          <SecondPage/>
+          <ThirdPage/>
+        </Carousel>
+      </div>
+    )
+  }
 }
-
-export default App;
+export default App

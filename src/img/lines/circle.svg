@@ -1,0 +1,16 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="86px" height="86px">
+<defs>
+<radialGradient id="PSgrad_0">
+  <stop offset="1%" stop-color="rgb(199,120,41)" stop-opacity="0.16" />
+  <stop offset="100%" stop-color="rgb(177,27,57)" stop-opacity="0.16" />
+</radialGradient>
+
+</defs>
+<path fill-rule="evenodd"  fill-opacity="0.22" fill="rgb(222, 138, 47)"
+ d="M42.500,2.757 C64.449,2.757 82.243,20.551 82.243,42.500 C82.243,64.449 64.449,82.243 42.500,82.243 C20.551,82.243 2.757,64.449 2.757,42.500 C2.757,20.551 20.551,2.757 42.500,2.757 Z"/>
+<path stroke-width="2px" stroke-linecap="round" stroke-linejoin="miter" fill="url(#PSgrad_0)"
+ d="M42.500,2.757 C64.449,2.757 82.243,20.551 82.243,42.500 C82.243,64.449 64.449,82.243 42.500,82.243 C20.551,82.243 2.757,64.449 2.757,42.500 C2.757,20.551 20.551,2.757 42.500,2.757 Z"/>
+</svg>
