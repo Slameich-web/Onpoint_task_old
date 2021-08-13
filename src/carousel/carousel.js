@@ -48,19 +48,8 @@ class Carousel extends React.Component {
     window.addEventListener('resize', this.onResize);
   }
 
-  componentWillUnmount () {
-    this.mounted = false
-    this.clearAutoTimeout()
-    clearTimeout(this.debounceTimeoutId)
-
-    this.refs.wrapper.removeEventListener('touchmove', this.onTouchMove, {capture: true})
-    this.refs.wrapper.removeEventListener('touchend', this.onTouchEnd, {capture: true})
-    window.removeEventListener('resize', this.onResize);
-  }
-
   componentDidUpdate(_, prevState) {
     if (this.state.frames.length && this.state.frames.length !== prevState.frames.length) {
-      // reset to default state
       this.hideFrames()
       this.prepareAutoSlide()
     }
@@ -92,7 +81,6 @@ class Carousel extends React.Component {
 
   onTouchStart (e) {
     if (this.state.total < 2) return
-    // e.preventDefault()
 
     this.clearAutoTimeout()
     this.updateFrameSize()
@@ -132,7 +120,6 @@ class Carousel extends React.Component {
       e.stopPropagation()
     }
 
-    // when reach frames edge in non-loop mode, reduce drag effect.
     if (!this.props.loop) {
       if (this.state.current === this.state.frames.length - 1) {
         deltaX < 0 && (deltaX /= 3)
@@ -151,7 +138,6 @@ class Carousel extends React.Component {
     const direction = this.decideEndPosition()
     direction && this.transitFramesTowards(direction)
 
-    // cleanup
     this.refs.wrapper.removeEventListener('mousemove', this.onTouchMove, {capture: true})
     this.refs.wrapper.removeEventListener('mouseup', this.onTouchEnd, {capture: true})
     this.refs.wrapper.removeEventListener('mouseleave', this.onTouchEnd, {capture: true})
@@ -215,14 +201,12 @@ class Carousel extends React.Component {
       this.prepareSiblingFrames()
     })
 
-    // auto slide only avalible in loop mode
     if (this.mounted && this.props.loop && this.props.auto) {
       const slideTimeoutID = setTimeout(this.autoSlide, this.props.interval)
       this.setState({ slider: slideTimeoutID })
     }
   }
 
-  // auto slide to 'next' or 'prev'
   autoSlide (rel) {
     this.clearAutoTimeout()
 
@@ -235,7 +219,6 @@ class Carousel extends React.Component {
         this.transitFramesTowards(this.props.axis === 'x' ? 'left' : 'up')
     }
 
-    // prepare next move after animation
     setTimeout(() => this.prepareAutoSlide(), this.props.duration)
   }
 
@@ -250,14 +233,13 @@ class Carousel extends React.Component {
     const { prev, next } = this.state.movingFrames
 
     if (prev === next) {
-      // Reprepare start position of prev frame
-      // (it was positioned as "next" frame)
+
       if (this.props.axis === 'x') {
         translateXY(prev, -this.state.frameWidth, 0, 0)
       } else {
         translateXY(prev, 0, -this.state.frameHeight, 0)
       }
-      prev.getClientRects() // trigger layout
+      prev.getClientRects() 
     }
 
     this.autoSlide('prev')
@@ -293,7 +275,6 @@ class Carousel extends React.Component {
 
     this.setState({ movingFrames: siblings })
 
-    // prepare frames position
     translateXY(siblings.current, 0, 0)
     if (this.props.axis === 'x') {
       translateXY(siblings.prev, -this.state.frameWidth, 0)
@@ -345,7 +326,7 @@ class Carousel extends React.Component {
         translateXY(prev, 0, 0, duration)
         newCurrentId = this.getFrameId('prev')
         break
-      default: // back to origin
+      default:
         translateXY(current, 0, 0, duration)
         if (axis === 'x') {
           translateXY(prev, -this.state.frameWidth, 0, duration)
@@ -360,15 +341,6 @@ class Carousel extends React.Component {
 
     this.setState({ current: newCurrentId })
   }
-
-  // debugFrames () {
-  //   console.log('>>> DEBUG-FRAMES: current', this.state.current)
-  //   const len = this.state.frames.length
-  //   for (let i = 0; i < len; ++i) {
-  //     const ref = this.refs['f' + i]
-  //     console.info(ref.innerText.trim(), ref.style.transform)
-  //   }
-  // }
 
   render () {
     const { frames, current } = this.state
@@ -434,7 +406,6 @@ function translateXY (el, x, y, duration = 0) {
 
   el.style.opacity = '1'
 
-  // animation
   el.style.transitionDuration = duration + 'ms'
   el.style.webkitTransitionDuration = duration + 'ms'
 
