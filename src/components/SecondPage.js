@@ -10,10 +10,10 @@ function SecondPage(){
             <div className="second_page_title">
                 Основа терапии -<br/> патогенез СД2
             </div>
-            <img src={ice4} className="second_page_ice_4"/>
-            <img src={ice3} className="second_page_ice_3"/>
-            <img src={ice2} className="second_page_ice_2"/>
-            <img src={ice1} className="second_page_ice_1"/>
+            <img alt="ice" src={ice4} className="second_page_ice_4"/>
+            <img alt="ice" src={ice3} className="second_page_ice_3"/>
+            <img alt="ice" src={ice2} className="second_page_ice_2"/>
+            <img alt="ice" src={ice1} className="second_page_ice_1"/>
         </div>
     )
 }

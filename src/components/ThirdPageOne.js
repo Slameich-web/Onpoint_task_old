@@ -37,9 +37,9 @@ function ThirdPageOne(){
                 <img alt="line" className="third_page_one_elem_line_3" src={line}/>
                 <img alt="line" className="third_page_one_elem_line_4" src={line2}/>
                 <img alt="line" className="third_page_one_elem_line_5" src={line2}/>
-                <img src={ice3} className="third_page_ice_8"/>
-                <img src={ice2} className="third_page_ice_9"/>
-                <img src={ice1} className="third_page_ice_10"/>
+                <img alt="ice" src={ice3} className="third_page_ice_8"/>
+                <img alt="ice" src={ice2} className="third_page_ice_9"/>
+                <img alt="ice" src={ice1} className="third_page_ice_10"/>
             </div>
             
         </div>

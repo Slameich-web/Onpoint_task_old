@@ -66,10 +66,10 @@ function ThirdPageTwo(){
                 <img alt="line" className="third_page_two_elem_line_6" src={line}/>
                 <img alt="line" className="third_page_two_elem_line_7" src={line}/>
                 <img alt="line" className="third_page_two_elem_line_8" src={line}/>
-                <img src={ice3} className="third_page_ice_4"/>
-                <img src={ice2} className="third_page_ice_5"/>
-                <img src={ice2} className="third_page_ice_6"/>
-                <img src={ice1} className="third_page_ice_7"/>
+                <img alt="ice" src={ice3} className="third_page_ice_4"/>
+                <img alt="ice" src={ice2} className="third_page_ice_5"/>
+                <img alt="ice" src={ice2} className="third_page_ice_6"/>
+                <img alt="ice" src={ice1} className="third_page_ice_7"/>
             </div>
                 
             </div>

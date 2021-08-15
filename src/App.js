@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from './carousel/carousel'
 import Dots from './carousel/firstDot'
-import FirstPage from "./components/FirstPage";
+import FirstPage from "./components/firstPage/FirstPage";
 import SecondPage from "./components/SecondPage";
 import ThirdPage from "./components/ThirdPage"
 

@@ -100,9 +100,9 @@ function ThirdPageThree(){
             <img alt="line" className="third_page_three_elem_line_20" src={line4}/>
             <img alt="line" className="third_page_three_elem_line_21" src={line4}/>
             <img alt="line" className="third_page_three_elem_line_22" src={line4}/>
-            <img src={ice3} className="third_page_ice_3"/>
-            <img src={ice2} className="third_page_ice_2"/>
-            <img src={ice1} className="third_page_ice_1"/>
+            <img alt="ice" src={ice3} className="third_page_ice_3"/>
+            <img alt="ice" src={ice2} className="third_page_ice_2"/>
+            <img alt="ice" src={ice1} className="third_page_ice_1"/>
             </div>
     )
 }
